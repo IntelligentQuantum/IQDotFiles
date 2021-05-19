@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# The clickable help menu. Middle click to restart wm.
+
+# If IQ-WM is running, use IQ-WM's readme and restart.
+pidof IQ-WM >/dev/null &&
+	READMEFILE=/usr/local/share/IQ-WM/IQ-IS.mom
+	restartwm() { pkill -HUP IQ-WM ;} ||
+		restartwm() { i3 restart ;}
+
+case $BLOCK_BUTTON in
+	1) groff -mom "${READMEFILE:-${XDG_DATA_HOME:-$HOME/.local/share}/IQ-IS/readme.mom}" -Tpdf | zathura - ;;
+	2) restartwm ;;
+	3) notify-send "❓ Help module" "\- Left click to open IQ-IS guide.
+- Middle click to refresh window manager." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac; echo "❓"

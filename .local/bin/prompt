@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# A IQ-MENU binary prompt script.
+# Gives a IQ-MENU prompt labeled with $1 to perform command $2.
+# For example:
+# `./prompt "Do you want to shutdown?" "shutdown -h now"`
+
+[ "$(printf "No\\nYes" | IQ-MENU -i -p "$1" -nb darkred -sb red -sf white -nf gray )" = "Yes" ] && $2
