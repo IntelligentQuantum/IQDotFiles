@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=File Manager
-Exec=/usr/local/bin/IQ-T -e lf %u
+Exec=/usr/local/bin/IQT -e lf %u

@@ -12,7 +12,7 @@ unsetopt PROMPT_SP
 
 # Default programs:
 export EDITOR="code"
-export TERMINAL="IQ-T"
+export TERMINAL="IQT"
 export BROWSER="firefox-developer-edition"
 
 # ~/ Clean-up:
@@ -56,7 +56,7 @@ export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export QT_QPA_PLATFORMTHEME="gtk2"	        # Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		            # Mozilla smooth scrolling/touchpads.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
-export _JAVA_AWT_WM_NONREPARENTING=1	    # Fix for Java applications in IQ-WM
+export _JAVA_AWT_WM_NONREPARENTING=1	    # Fix for Java applications in IQWM
 
 # This is the list for lf icons:
 export LF_ICONS="di=📁:\
@@ -143,11 +143,11 @@ if pacman -Qs libxft-bgra >/dev/null 2>&1; then
 	# Start graphical server on user's current tty if not already running.
 	[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
 else
-	echo "\033[31mIMPORTANT\033[0m: Note that \033[32m\`libxft-bgra\`\033[0m must be installed for this build of IQ-WM.
+	echo "\033[31mIMPORTANT\033[0m: Note that \033[32m\`libxft-bgra\`\033[0m must be installed for this build of IQWM.
 Please run:
 	\033[32myay -S libxft-bgra-git\033[0m
 and replace \`libxft\`. Afterwards, you may start the graphical server by running \`startx\`."
 fi
 
 # Switch escape and caps if tty and no passwd required:
-sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/IQ-IS/ttymaps.kmap 2>/dev/null
+sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/IQScript/ttymaps.kmap 2>/dev/null

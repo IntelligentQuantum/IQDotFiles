@@ -1,0 +1,4 @@
+#!/bin/bash
+
+maim ~/Pictures/Screenshots/IQ-$(date '+%y%m%d-%H%M-%S').png
+maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png

@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Mail
-Exec=/usr/local/bin/IQ-T -e neomutt %u
+Exec=/usr/local/bin/IQT -e neomutt %u

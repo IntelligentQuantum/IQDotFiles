@@ -180,7 +180,7 @@ KMBX: Bismarck, ND
 KVAX: Jacksonville, FL
 KJGX: Peachtree City/atlanta, GA
 KVNX: Norman, OK
-KVBX: Vandenberg Afb: Orcutt, CA" | IQ-MENU -r -i -l 50 -p "Select a National Weather Service radar to use as default:" | sed "s/:.*//" | tr "[:lower:]" "[:upper:]")"
+KVBX: Vandenberg Afb: Orcutt, CA" | IQMenu -r -i -l 50 -p "Select a National Weather Service radar to use as default:" | sed "s/:.*//" | tr "[:lower:]" "[:upper:]")"
 
 # Sanity check of selection and ensure user did not escape.
 echo "$chosen" | grep -q "^[A-Z]\+$" && echo "$chosen" > "$radarloc" ;}

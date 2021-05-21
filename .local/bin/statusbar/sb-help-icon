@@ -2,16 +2,16 @@
 
 # The clickable help menu. Middle click to restart wm.
 
-# If IQ-WM is running, use IQ-WM's readme and restart.
-pidof IQ-WM >/dev/null &&
-	READMEFILE=/usr/local/share/IQ-WM/IQ-IS.mom
-	restartwm() { pkill -HUP IQ-WM ;} ||
+# If IQWM is running, use IQWM's readme and restart.
+pidof IQWM >/dev/null &&
+	READMEFILE=/usr/local/share/IQWM/IQScript.mom
+	restartwm() { pkill -HUP IQWM ;} ||
 		restartwm() { i3 restart ;}
 
 case $BLOCK_BUTTON in
-	1) groff -mom "${READMEFILE:-${XDG_DATA_HOME:-$HOME/.local/share}/IQ-IS/readme.mom}" -Tpdf | zathura - ;;
+	1) groff -mom "${READMEFILE:-${XDG_DATA_HOME:-$HOME/.local/share}/IQScript/readme.mom}" -Tpdf | zathura - ;;
 	2) restartwm ;;
-	3) notify-send "❓ Help module" "\- Left click to open IQ-IS guide.
+	3) notify-send "❓ Help module" "\- Left click to open IQScript guide.
 - Middle click to refresh window manager." ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac; echo "❓"

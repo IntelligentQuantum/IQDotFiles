@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Usage:
-# `$0`: Ask for recording type via IQ-MENU
+# `$0`: Ask for recording type via IQMenu
 # `$0 screencast`: Record both audio and screen
 # `$0 video`: Record only screen
 # `$0 audio`: Record only audio
@@ -12,7 +12,7 @@
 updateicon()
 {
     echo "$1" >/tmp/recordingicon
-    pkill -RTMIN+9 "${STATUSBAR:-IQ-BLOCKS}"
+    pkill -RTMIN+9 "${STATUSBAR:-IQBlocks}"
 }
 
 killrecording()
@@ -22,7 +22,7 @@ killrecording()
     kill -15 "$recpid"
     rm -f /tmp/recordingpid
     updateicon ""
-    pkill -RTMIN+9 "${STATUSBAR:-IQ-BLOCKS}"
+    pkill -RTMIN+9 "${STATUSBAR:-IQBlocks}"
     # even after SIGTERM, ffmpeg may still run, so SIGKILL it.
     sleep 3
     kill -9 "$recpid"
@@ -90,7 +90,7 @@ audio()
 
 askrecording()
 {
-    choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | IQ-MENU -i -p "Select recording style:")
+    choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | IQMenu -i -p "Select recording style:")
     case "$choice" in
     screencast) screencast ;;
     audio) audio ;;
@@ -103,7 +103,7 @@ askrecording()
 
 asktoend()
 {
-    response=$(printf "No\\nYes" | IQ-MENU -i -p "Recording still active. End recording?") &&
+    response=$(printf "No\\nYes" | IQMenu -i -p "Recording still active. End recording?") &&
         [ "$response" = "Yes" ] && killrecording
 }
 

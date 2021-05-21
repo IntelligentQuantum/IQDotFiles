@@ -15,7 +15,7 @@
 # [Action]
 # Description = Updating statusbar...
 # When = PostTransaction
-# Exec = /usr/bin/pkill -RTMIN+8 IQ-BLOCKS # Or i3blocks if using i3.
+# Exec = /usr/bin/pkill -RTMIN+8 IQBlocks # Or i3blocks if using i3.
 
 case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -e sb-popupgrade ;;

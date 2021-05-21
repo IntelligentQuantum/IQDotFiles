@@ -113,8 +113,8 @@ set noshowcmd
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
 	autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
-" Recompile IQ-BLOCKS on config edit.
-	autocmd BufWritePost ~/.local/src/IQ-BLOCKS/config.h !cd ~/.local/src/IQ-BLOCKS/; sudo make install && { killall -q IQ-BLOCKS;setsid -f IQ-BLOCKS }
+" Recompile IQBlocks on config edit.
+	autocmd BufWritePost ~/.local/src/IQBlocks/config.h !cd ~/.local/src/IQBlocks/; sudo make install && { killall -q IQBlocks;setsid -f IQBlocks }
 
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 if &diff
