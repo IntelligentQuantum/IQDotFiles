@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# This gives the user a list of videos they can select and watch without a
-# browser. If you want to check a tutorial video, it makes it easy. I'll
-# add/remove videos from this list as I go on.
-
-vidlist="IQ-WM (IntelligentQuantum Window Manager)	https://www.example.com/"
-
-echo "$vidlist" | grep -P "^$(echo "$vidlist" | grep "https:" | sed 's/\t.*//g' | dmenu -i -p "Learn about what? (ESC to cancel)" -l 20 | awk '{print $1}')\s" | sed 's/.*\t//' | xargs -r mpv
