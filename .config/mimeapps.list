@@ -17,3 +17,5 @@ application/rss+xml=rss.desktop
 video/x-matroska=video.desktop
 x-scheme-handler/lbry=lbry.desktop
 inode/directory=file.desktop
+application/x-shellscript=code-oss.desktop
+text/html=firefox-developer-edition.desktop
